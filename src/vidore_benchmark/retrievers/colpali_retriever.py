@@ -31,7 +31,7 @@ class ListDataset(Dataset[T]):
         return self.elements[idx]
 
 
-@register_vision_retriever("vidore/colpali")
+@register_vision_retriever("vidore/colpali-v1.2")
 class ColPaliRetriever(VisionRetriever):
     """
     ColPali Retriever that implements the model from "ColPali: Efficient Document Retrieval
@@ -40,7 +40,7 @@ class ColPaliRetriever(VisionRetriever):
 
     def __init__(self, device: str = "auto"):
         super().__init__()
-        model_name = "google/paligemma-3b-mix-448"
+        model_name = "vidore/colpaligemma-3b-pt-448-base"
         adapter_name = "vidore/colpali"
 
         self.device = get_torch_device(device)
