@@ -41,7 +41,7 @@ class ColPaliRetriever(VisionRetriever):
     def __init__(self, device: str = "auto"):
         super().__init__()
         model_name = "vidore/colpaligemma-3b-pt-448-base"
-        adapter_name = "vidore/colpali"
+        adapter_name = "vidore/colpali-v1.2"
 
         self.device = get_torch_device(device)
         logger.info(f"Using device: {self.device}")
